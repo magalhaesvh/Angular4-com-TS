@@ -1,0 +1,58 @@
+<!--section class="property-binding">
+
+  <article>
+    <h4>Interpolacao</h4>
+    <p>String renderizada: {{url}} </p>
+  </article>
+
+  <article>
+    <h4>Property Binding</h4>
+    <img src= "{{ urlImagem }}" >
+  </article>
+
+  <article>
+    <h4>Class e Style Binding</h4>
+    <div>Selecione uma classe
+      <select #classe (change) ="0" >
+        <option value="alert-success">Sucesso</option>
+        <option value="alert-danger">Perigo</option>
+      </select>
+      <br><br>
+      <div class="alert" role="alert" [class.alert-success]="classe.value == 'alert-success'">...</div>
+      <div class="alert" role="alert" [class.alert-danger]="classe.value == 'alert-danger'">...</div>
+      <div class="alert alert-warning" role="alert" [style.display] = "classe.value == 'alert-danger' ? 'block' : 'none'">Teste</div>
+
+    </div>
+  </article-->
+<section class="property-binding">
+  <article>
+    <h3>Event binding</h3>
+    <div>
+      <button (click)="botaoClicado()"
+      class="btn btn-primary">
+        Me clique!
+      </button>
+
+      <br><br>
+
+      <input type="text"
+        (keyup)="onKeyUp($event)"
+        (keyup.enter)="salvarValor(campoInput.value)"
+        (blur)="salvarValor(campoInput.value)"
+        #campoInput />
+
+       <p>Valor atual: {{ valorAtual }}</p>
+       <p>Valor salvo: {{ valorSalvo }}</p>
+
+       <br>
+       <span
+        (mouseover)="onMouseOverOut()"
+        (mouseout)="onMouseOverOut()"
+        [class.highlight]="isMouseOver"
+        >
+         Passe o mouse sobre mim
+      </span>
+    </div>
+</article>
+ 
+</section>
