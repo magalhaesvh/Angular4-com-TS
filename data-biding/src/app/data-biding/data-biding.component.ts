@@ -15,6 +15,15 @@ export class DataBidingComponent implements OnInit {
 
   isMouseOver: boolean = false;
 
+  nome = "abc";
+
+  pessoa = {
+    nome: "abc",
+    cpf: 12345678
+  };
+
+  nomeDoCurso = "Python";
+
   botaoClicado(){
     alert("Clicou!!");
   }
@@ -29,6 +38,10 @@ export class DataBidingComponent implements OnInit {
 
   onMouseOverOut(){
     this.isMouseOver = !this.isMouseOver;
+  }
+
+  onMudouValor(evento){
+    console.log(evento);
   }
 
   constructor() { 
